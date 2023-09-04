@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jwttest.basDevice.mapper.BasDeviceMapper">
+
+    <select id="deviceCountInfo" resultType="java.util.Map">
+        SELECT COUNT(id) count , device_type_name from bas_device WHERE  `status` =1 GROUP BY device_type_id
+    </select>
+
+
+    <select id="deviceCountInfoByCompany" resultType="java.util.Map">
+        SELECT COUNT(id) count , company_name from bas_device WHERE  `status` =1 GROUP BY company_id
+    </select>
+
+</mapper>
